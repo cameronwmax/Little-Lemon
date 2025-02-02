@@ -3,7 +3,7 @@ import Nav from "./Nav";
 
 function Header() {
   return (
-    <header id="header">
+    <header id="header" className="header center">
       <Logo />
       <Nav />
     </header>

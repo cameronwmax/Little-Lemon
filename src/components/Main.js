@@ -1,14 +1,15 @@
+import AboutSection from "./AboutSection";
+import HeroSection from "./HeroSection";
+import SpecialsSection from "./SpecialsSection";
+import TestimonialsSection from "./TestimonialsSection";
+
 function Main() {
   return (
-    <main>
-      {/* Hero */}
-      <section id="hero"></section>
-      {/* Specials */}
-      <section id="specials"></section>
-      {/* Testimonials */}
-      <section id="testimonials"></section>
-      {/* About */}
-      <section id="about"></section>
+    <main className="main">
+      <HeroSection />
+      <SpecialsSection />
+      <TestimonialsSection />
+      <AboutSection />
     </main>
   );
 }

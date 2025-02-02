@@ -1,24 +1,36 @@
 function Nav() {
   return (
-    <nav id="nav">
-      <ul>
-        <li>
-          <a href="#">Home</a>
+    <nav id="nav" className="nav">
+      <ul className="nav__list">
+        <li className="nav__item">
+          <a href="/" className="nav__link">
+            Home
+          </a>
         </li>
-        <li>
-          <a href="#">About</a>
+        <li className="nav__item">
+          <a href="/" className="nav__link">
+            About
+          </a>
         </li>
-        <li>
-          <a href="#">Menu</a>
+        <li className="nav__item">
+          <a href="/" className="nav__link">
+            Menu
+          </a>
         </li>
-        <li>
-          <a href="#">Reservations</a>
+        <li className="nav__item">
+          <a href="/" className="nav__link">
+            Reservations
+          </a>
         </li>
-        <li>
-          <a href="#">Order Online</a>
+        <li className="nav__item">
+          <a href="/" className="nav__link">
+            Order Online
+          </a>
         </li>
-        <li>
-          <a href="#">Login</a>
+        <li className="nav__item">
+          <a href="/" className="nav__link">
+            Login
+          </a>
         </li>
       </ul>
     </nav>
