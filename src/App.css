@@ -62,6 +62,17 @@ a {
   padding: 1.6rem 3.2rem;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+}
+.btn:hover,
+.btn:focus {
+  transform: translateY(-3px);
+  background-color: var(--color-secondary-1);
+}
+.btn:focus {
+  outline: 1px solid var(--color-highlight-2);
+  box-shadow: 0 0 20px var(--color-highlight-2);
 }
 
 .root {
@@ -90,10 +101,21 @@ a {
   padding: 1rem;
 }
 
-.nav__link {
+.nav__link:link,
+.nav__link:visited {
   font-size: 2rem;
   font-weight: 600;
   color: var(--color-black);
+  transition: all 0.3s;
+}
+.nav__link:hover,
+.nav__link:active,
+.nav__link:focus {
+  color: var(--color-primary-2);
+}
+.nav__link:focus {
+  outline: 2px solid var(--color-primary-1);
+  border-radius: 8px;
 }
 
 /* Hero Section */
@@ -232,6 +254,10 @@ a {
   display: flex;
   gap: 1rem;
   cursor: pointer;
+  transition: all 0.3s;
+}
+.specials__card-btn:hover {
+  color: var(--color-primary-2);
 }
 
 .specials__card-icon {
@@ -397,7 +423,18 @@ a {
   gap: 1rem;
 }
 
-.footer__link {
+.footer__link:link,
+.footer__link:visited {
   font-size: 1.6rem;
   font-weight: 600;
+  transition: all 0.3s;
+}
+.footer__link:hover,
+.footer__link:active,
+.footer__link:focus {
+  color: var(--color-primary-2);
+}
+.footer__link:focus {
+  outline: 2px solid var(--color-primary-2);
+  border-radius: 8px;
 }
