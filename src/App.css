@@ -438,3 +438,75 @@ a {
   outline: 2px solid var(--color-primary-2);
   border-radius: 8px;
 }
+
+/* Booking Page */
+.booking {
+  padding: 6rem;
+  background-color: var(--color-primary-1);
+  border-bottom: 1px solid black;
+  margin-bottom: 4rem;
+  border-radius: 8px;
+}
+
+.booking__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form-field {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking__label {
+  font-size: 3.4rem;
+  font-weight: 600;
+  color: var(--color-primary-2);
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.booking__input {
+  font-size: 1.6rem;
+  font-weight: 500;
+  width: 40ch;
+  height: 3.4rem;
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-text);
+}
+
+.booking__input .name-field {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.two-fields {
+  display: flex;
+  gap: 2rem;
+}
+
+.booking-details {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.booking-header {
+  font-size: 2.4rem;
+  font-family: var(--font-heading);
+  line-height: 0.7;
+  color: var(--color-primary-2);
+}
+
+.booking-info {
+  font-size: 1.8rem;
+  color: var(--color-black);
+  font-weight: 500;
+}
