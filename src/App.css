@@ -477,6 +477,12 @@ a {
   height: 3.4rem;
   padding: 0.4rem 0.8rem;
   font-family: var(--font-text);
+  border-radius: 8px;
+  border: 1px solid var(--color-black);
+}
+
+.booking__input:focus {
+  outline: 2px solid var(--color-primary-2);
 }
 
 .booking__input .name-field {

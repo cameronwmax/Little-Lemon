@@ -10,7 +10,7 @@ function FormFieldSelect({ label, fieldName, options, required = true, value, on
         required={required}
         className="booking__input booking__select"
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.value, fieldName)}
       >
         <option value="" className="booking__option">
           --Please choose an option--

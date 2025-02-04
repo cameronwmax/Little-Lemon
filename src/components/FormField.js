@@ -12,7 +12,7 @@ function FormField({ label, fieldName, type, placeholder = "", required = true, 
         className="booking__input"
         placeholder={placeholder}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.value, fieldName)}
       />
     </div>
   );

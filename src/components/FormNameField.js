@@ -1,4 +1,4 @@
-function FormNameField({ values, setters }) {
+function FormNameField({ values, onChange }) {
   return (
     <div className="form-field">
       <label htmlFor="firstName" className="booking__label">
@@ -12,7 +12,7 @@ function FormNameField({ values, setters }) {
           className="booking__input"
           placeholder="First"
           value={values[0]}
-          onChange={setters[0]}
+          onChange={(e) => onChange(e.target.value, "firstName")}
         />
         <input
           type="text"
@@ -21,7 +21,7 @@ function FormNameField({ values, setters }) {
           className="booking__input"
           placeholder="Last"
           value={values[1]}
-          onChange={setters[1]}
+          onChange={(e) => onChange(e.target.value, "lastName")}
         />
       </div>
     </div>

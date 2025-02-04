@@ -5,18 +5,37 @@ import FormField from "./FormField";
 import FormFieldSelect from "./FormFieldSelect";
 import FormNameField from "./FormNameField";
 
-function Form() {
-  const [guests, setGuests] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [occasion, setOccasion] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+const reservationTimes = [
+  "4:00 pm",
+  "4:30 pm",
+  "5:45 pm",
+  "6:30 pm",
+  "7:00 pm",
+  "7:45 pm",
+  "8:30 pm",
+  "9:45 pm",
+];
+const occasions = ["Birthday", "Engagement", "Anniversary"];
 
-  function handleSubmit() {
-    console.log("test");
+function Form() {
+  const [booking, setBooking] = useState({
+    guests: 1,
+    date: new Date().toISOString().split("T")[0],
+    time: "",
+    occasion: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+  });
+
+  function handleChange(value, field) {
+    setBooking((prev) => ({ ...prev, [field]: value }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(booking);
   }
 
   return (
@@ -26,32 +45,38 @@ function Form() {
         fieldName="guests"
         type="number"
         placeholder="Number of guests"
-        value={guests}
-        onChange={setGuests}
+        value={booking.guests}
+        onChange={handleChange}
       />
-      <FormField label="Date" fieldName="date" type="date" value={date} onChange={setDate} />
+      <FormField
+        label="Date"
+        fieldName="date"
+        type="date"
+        value={booking.date}
+        onChange={handleChange}
+      />
 
       <FormFieldSelect
         label="Time"
         fieldName="time"
-        options={["1", "2", "3"]}
-        value={time}
-        onChange={setTime}
+        options={reservationTimes}
+        value={booking.time}
+        onChange={handleChange}
       />
 
       <FormFieldSelect
         label="Occasion"
         fieldName="occasion"
-        options={["1", "2", "3"]}
+        options={occasions}
         required={false}
-        value={occasion}
-        onChange={setOccasion}
+        value={booking.occasion}
+        onChange={handleChange}
       />
 
-      <FormNameField values={[firstName, lastName]} setters={[setFirstName, setLastName]} />
-      <FormEmailPhone values={[email, phoneNumber]} setters={[setEmail, setPhoneNumber]} />
+      <FormNameField values={[booking.firstName, booking.lastName]} onChange={handleChange} />
+      <FormEmailPhone values={[booking.email, booking.phone]} onChange={handleChange} />
 
-      <FormDetails numGuests="4" date="2/3/2025" time="6:20pm" />
+      <FormDetails numGuests={booking.guests} date={booking.date} time={booking.time} />
 
       <input type="submit" value="Book Reservation" className="btn" />
     </form>

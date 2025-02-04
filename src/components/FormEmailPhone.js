@@ -1,6 +1,6 @@
 import FormField from "./FormField";
 
-function FormEmailPhone({ values, setters }) {
+function FormEmailPhone({ values, onChange }) {
   return (
     <div className="two-fields">
       <FormField
@@ -9,7 +9,7 @@ function FormEmailPhone({ values, setters }) {
         type="email"
         placeholder="Email"
         value={values[0]}
-        onChange={setters[0]}
+        onChange={onChange}
       />
 
       <FormField
@@ -18,7 +18,7 @@ function FormEmailPhone({ values, setters }) {
         type="tel"
         placeholder="Phone Number"
         value={values[1]}
-        onChange={setters[1]}
+        onChange={onChange}
       />
     </div>
   );
