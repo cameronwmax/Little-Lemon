@@ -6,6 +6,7 @@ function FormField({ label, fieldName, type, placeholder = "", required = true, 
         {label}:
       </label>
       <input
+        id={fieldName}
         type={type}
         required={required}
         name={fieldName}

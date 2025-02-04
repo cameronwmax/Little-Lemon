@@ -6,6 +6,7 @@ function FormNameField({ values, onChange }) {
       </label>
       <div className="two-fields">
         <input
+          id={values[0]}
           type="text"
           required
           name="firstName"
@@ -15,6 +16,7 @@ function FormNameField({ values, onChange }) {
           onChange={(e) => onChange(e.target.value, "firstName")}
         />
         <input
+          id={values[1]}
           type="text"
           required
           name="lastName"

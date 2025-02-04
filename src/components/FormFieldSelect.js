@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function FormFieldSelect({ label, fieldName, options, required = true, value, onChange }) {
   return (
     <div className="form-field">
@@ -6,6 +8,7 @@ function FormFieldSelect({ label, fieldName, options, required = true, value, on
         {label}:
       </label>
       <select
+        id={fieldName}
         name={fieldName}
         required={required}
         className="booking__input booking__select"

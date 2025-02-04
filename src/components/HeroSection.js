@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./Button";
 
 function HeroSection() {
@@ -14,7 +15,9 @@ function HeroSection() {
             cocktails in a lively but casual environment. The restaurant features a locally-sourced
             menu with daily specials.
           </p>
-          <Button>Reserve a Table</Button>
+          <Link to="/booking">
+            <Button>Reserve a Table</Button>
+          </Link>
         </div>
         <div className="hero__img-wrapper">
           <img src="../assets/hero.jpg" alt="Food from the restaurant" className="hero__img" />

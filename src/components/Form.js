@@ -1,23 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { fetchAPI, submitAPI } from "../utils/fakeAPI";
 import FormDetails from "./FormDetails";
 import FormEmailPhone from "./FormEmailPhone";
 import FormField from "./FormField";
 import FormFieldSelect from "./FormFieldSelect";
 import FormNameField from "./FormNameField";
 
-const reservationTimes = [
-  "4:00 pm",
-  "4:30 pm",
-  "5:45 pm",
-  "6:30 pm",
-  "7:00 pm",
-  "7:45 pm",
-  "8:30 pm",
-  "9:45 pm",
-];
 const occasions = ["Birthday", "Engagement", "Anniversary"];
 
 function Form() {
+  const [reservationTimes, setReservationTimes] = useState([]);
   const [booking, setBooking] = useState({
     guests: 1,
     date: new Date().toISOString().split("T")[0],
@@ -35,8 +27,12 @@ function Form() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(booking);
   }
+
+  useEffect(() => {
+    const response = fetchAPI(new Date(booking.date));
+    setReservationTimes(response);
+  }, [booking.date]);
 
   return (
     <form className="booking__form" onSubmit={handleSubmit}>
