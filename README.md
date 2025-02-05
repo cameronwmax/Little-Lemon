@@ -12,7 +12,7 @@ Little Lemon is a restaurant website prototype built as part of the **Meta Front
 - HTML
 - CSS
 - JavaScript
-- React (if applicable)
+- React
 
 ## Screenshots
 ![Homepage](final-screenshots/homepage(1).png)
