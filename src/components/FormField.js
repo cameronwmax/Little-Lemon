@@ -1,4 +1,8 @@
-function FormField({ label, fieldName, type, placeholder = "", required = true, value, onChange }) {
+import { useBooking } from "../context/useBooking";
+
+function FormField({ label, fieldName, type, placeholder = "", required = true, value }) {
+  const { handleChange } = useBooking();
+
   return (
     <div className="form-field">
       <label htmlFor={fieldName} className="booking__label">
@@ -13,7 +17,7 @@ function FormField({ label, fieldName, type, placeholder = "", required = true, 
         className="booking__input"
         placeholder={placeholder}
         value={value}
-        onChange={(e) => onChange(e.target.value, fieldName)}
+        onChange={(e) => handleChange(e.target.value, fieldName)}
       />
     </div>
   );

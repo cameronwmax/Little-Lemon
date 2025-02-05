@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useBooking } from "../context/useBooking";
 
-function FormFieldSelect({ label, fieldName, options, required = true, value, onChange }) {
+function FormFieldSelect({ label, fieldName, required = true, value }) {
+  const { handleChange, reservationTimes, occasions } = useBooking();
+  const options = fieldName === "time" ? reservationTimes : occasions;
+
   return (
     <div className="form-field">
       <label htmlFor={fieldName} className="booking__label">
@@ -13,7 +16,7 @@ function FormFieldSelect({ label, fieldName, options, required = true, value, on
         required={required}
         className="booking__input booking__select"
         value={value}
-        onChange={(e) => onChange(e.target.value, fieldName)}
+        onChange={(e) => handleChange(e.target.value, fieldName)}
       >
         <option value="" className="booking__option">
           --Please choose an option--

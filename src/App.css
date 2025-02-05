@@ -516,3 +516,37 @@ a {
   color: var(--color-black);
   font-weight: 500;
 }
+
+/* Confirmed Page */
+.confirmed {
+}
+
+.confirmed__wrapper {
+  margin: 8rem 0;
+  padding: 4rem;
+  border-radius: 8px;
+  background-color: var(--color-primary-1);
+}
+
+.confirmed__heading {
+  font-size: 5.2rem;
+  font-family: var(--font-heading);
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--color-primary-2);
+  border-bottom: 3px solid var(--color-primary-2);
+  width: max-content;
+}
+
+.confirmed__list {
+  margin-top: 2rem;
+}
+
+.confirmed__item {
+  font-size: 2.4rem;
+  color: var(--color-secondary-1);
+}
+
+.confirmed__item span {
+  color: var(--color-highlight-1);
+}

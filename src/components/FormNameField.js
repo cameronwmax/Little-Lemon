@@ -1,4 +1,7 @@
-function FormNameField({ values, onChange }) {
+import { useBooking } from "../context/useBooking";
+
+function FormNameField({ values }) {
+  const { handleChange } = useBooking();
   return (
     <div className="form-field">
       <label htmlFor="firstName" className="booking__label">
@@ -13,7 +16,7 @@ function FormNameField({ values, onChange }) {
           className="booking__input"
           placeholder="First"
           value={values[0]}
-          onChange={(e) => onChange(e.target.value, "firstName")}
+          onChange={(e) => handleChange(e.target.value, "firstName")}
         />
         <input
           id={values[1]}
@@ -23,7 +26,7 @@ function FormNameField({ values, onChange }) {
           className="booking__input"
           placeholder="Last"
           value={values[1]}
-          onChange={(e) => onChange(e.target.value, "lastName")}
+          onChange={(e) => handleChange(e.target.value, "lastName")}
         />
       </div>
     </div>
