@@ -9,6 +9,9 @@ import FormNameField from "./FormNameField";
 
 function Form() {
   const { booking, setReservationTimes, handleSubmit } = useBooking();
+  const isDisabled = Object.values(booking).some((value) => !value);
+
+  console.log(isDisabled);
 
   useEffect(() => {
     const response = fetchAPI(new Date(booking.date));
@@ -40,7 +43,7 @@ function Form() {
 
       <FormDetails numGuests={booking.guests} date={booking.date} time={booking.time} />
 
-      <input type="submit" value="Book Reservation" className="btn" />
+      <input type="submit" disabled={isDisabled} value="Book Reservation" className="btn" />
     </form>
   );
 }
